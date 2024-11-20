@@ -56,7 +56,7 @@ header nav ul li a {
 
 /* Sección Principal */
 #main-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/landing/img/img13 (1).png') no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('img13 (1).png') no-repeat center center;
     background-size: cover;
     color: white;
     text-align: center;
