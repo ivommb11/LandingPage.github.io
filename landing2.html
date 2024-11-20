@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactiva</title>
+    <link rel="icon" type="image/ico" href="/landing/img/img17.ico">
+    <link rel="stylesheet" href="landing.css">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/landing/img/img17.png" alt="Logo Interactiva">
+        </div>
+        <nav>
+            <ul>
+                <div class="contenedor">
+                    <li><a href="landing.html">Innovación</a></li>
+                    <li><a href="landing2.html">Servicios</a></li>
+                    <li><a href="landing3.html">Cómo empezar</a></li>
+                    <li><a href="landing5.html">Sobre nosotros</a></li>
+                    <li><a href="landing4.html">Descargar</a></li>
+                    <li><a href="landing6.html">Comunidad</a></li>
+            </div>
+            </ul>
+        </nav>
+        <div>
+        <button id="deuteranopia-mode" class="deuteranopia-button">Modo Deuteranopia: Leve</button>
+    </div>
+    </header>
+
+    <!-- Sección principal -->
+    <section id="main-section">
+        <h1>Mejora tus habilidades sociales con Interactiva</h1>
+        <p>Descubre cómo la tecnología puede ayudarte a superar los desafíos sociales en un entorno virtual seguro y personalizado.</p>
+    </section>
+
+
+<!-- Sección de Servicios -->
+<section id="servicios">
+    <h2>¿Qué ofrecemos?</h2>
+    <div class="services-wrapper">
+        <div class="services-container">
+            <div class="service" onclick="showServiceDetails('Simulaciones Realistas', 'Información detallada sobre simulaciones realistas.')">
+                <h4>Simulaciones Realistas</h4>
+                <p><span class="icon-left">👤</span> Practica interacciones sociales en escenarios virtuales seguros. <span class="icon-right">👤</span></p>
+            </div>
+            <div class="service" onclick="showServiceDetails('Retroalimentación Personalizada', 'Información detallada sobre retroalimentación personalizada.')">
+                <h4>Retroalimentación Personalizada</h4>
+                <p><span class="icon-left">💬</span> Mejora con recomendaciones instantáneas en cada sesión. <span class="icon-right">💬</span></p>
+            </div>
+            <div class="service" onclick="showServiceDetails('Sensores personalizados', 'Información detallada sobre sensores personalizados.')">
+                <h4>Sensores personalizados</h4>
+                <p><span class="icon-left">📊</span> Monitorea tu evolución con reportes fáciles de entender. <span class="icon-right">📊</span></p>
+            </div>
+        </div>
+        <div class="service-image">
+            <img src="/landing/img/img3.png" alt="Imagen de servicio">
+        </div>
+    </div>
+</section>
+
+
+<section id="testimonios">
+    <h2>Testimonios</h2>
+    <div class="testimonial-container">
+        <div class="testimonial-image">
+            <img src="/landing/img/img4.png" alt="Imagen de usuario">
+        </div>
+        <div class="testimonial-content">
+            <div class="testimonial-navigation">
+                <span class="nav-circle"></span>
+                <span class="nav-circle"></span>
+                <span class="nav-circle"></span>
+            </div>
+            <p class="testimonial-text">
+                "La plataforma ha sido un recurso increíblemente valioso en mi vida. Desde el momento en que empecé a utilizarla, he experimentado un cambio significativo en mi capacidad para relacionarme con las personas, especialmente con mis compañeros de la universidad..."
+            </p>
+            <div class="testimonial-info">
+                <img src="/landing/img/img4.png" alt="Foto de Andrés Sánchez" class="testimonial-avatar">
+                <div>
+                    <p class="testimonial-name">Andrés Sánchez</p>
+                    <p class="testimonial-role">Estudiante Universitario</p>
+                </div>
+            </div>
+            <div class="view-more">
+                <a href="#">VER MÁS TESTIMONIOS ➤</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+   <!-- Footer -->
+   <footer>
+    <div class="footer-info">
+        <div>
+            <h4>Contacto</h4>
+            <p>+1 (123) 456-7890</p>
+        </div>
+        <div>
+            <h4>Redes Sociales</h4>
+            <p>Facebook | Instagram | YouTube</p>
+        </div>
+        <div>
+            <h4>Infórmate</h4>
+            <p>Términos y Condiciones | Política de Privacidad</p>
+        </div>
+        <div class="footer-logo">
+            <p>INTERACTIVA</p>
+            <small>Derechos Reservados</small>
+        </div>
+    </div>
+</footer>
+<script>
+
+
+// Selecciona el botón
+const deuteranopiaButton = document.getElementById('deuteranopia-mode');
+
+// Variable para controlar el nivel de deuteranopia
+let deuteranopiaLevel = 0;
+
+// Función para alternar entre los niveles de deuteranopia
+function toggleDeuteranopiaMode() {
+    // Cambia el nivel de deuteranopia cada vez que se hace clic
+    deuteranopiaLevel = (deuteranopiaLevel + 1) % 4;
+
+    // Aplica el nivel correspondiente mediante el atributo data-theme y actualiza el texto del botón
+    switch (deuteranopiaLevel) {
+        case 1:
+            document.body.setAttribute('data-theme', 'deuteranopia-leve');
+            deuteranopiaButton.textContent = 'Modo Deuteranopia: Moderado';
+            break;
+        case 2:
+            document.body.setAttribute('data-theme', 'deuteranopia-moderado');
+            deuteranopiaButton.textContent = 'Modo Deuteranopia: Grave';
+            break;
+        case 3:
+            document.body.setAttribute('data-theme', 'deuteranopia-grave');
+            deuteranopiaButton.textContent = 'Desactivar Modo Deuteranopia';
+            break;
+        default:
+            document.body.removeAttribute('data-theme'); // Quita el atributo para desactivar el modo
+            deuteranopiaButton.textContent = 'Modo Deuteranopia: Leve';
+            break;
+    }
+}
+
+// Agrega el evento de clic al botón
+deuteranopiaButton.addEventListener('click', toggleDeuteranopiaMode);
+
+
+</script>
+<body>
+</html>
